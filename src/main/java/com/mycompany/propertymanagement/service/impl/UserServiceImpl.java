@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO login(String email, String password) {
-        UserDTO userDTO = null;
+        UserDTO userDTO;
         Optional<UserEntity> optionalUserEntity = userRepository.findByOwnerEmailAndPassword(email,password);
        if(optionalUserEntity.isPresent()){
            userDTO = userConvertor.UserEntityToDto(optionalUserEntity.get());
