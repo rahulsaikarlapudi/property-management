@@ -34,16 +34,15 @@ public class PropertyController {
     }
     @PutMapping("/updateProperty/{id}")
     public ResponseEntity<PropertyDTO> update(@RequestBody PropertyDTO propertyDTO,@PathVariable Long id){
-        PropertyDTO p = new PropertyDTO();
-        p = ps.updateProperty(propertyDTO,id);
+        PropertyDTO p = ps.updateProperty(propertyDTO,id);
+
         ResponseEntity<PropertyDTO> response = new ResponseEntity<>(p, HttpStatus.CREATED);
         return response;
 
     }
     @PatchMapping("/description/{id}")
     public ResponseEntity<PropertyDTO> updateDescription(@RequestBody PropertyDTO propertyDTO,@PathVariable Long id){
-        PropertyDTO p = new PropertyDTO();
-        p = ps.updateDescription(propertyDTO,id);
+        PropertyDTO p = ps.updateDescription(propertyDTO,id);
         ResponseEntity<PropertyDTO> response = new ResponseEntity<>(p, HttpStatus.CREATED);
         return response;
     }
